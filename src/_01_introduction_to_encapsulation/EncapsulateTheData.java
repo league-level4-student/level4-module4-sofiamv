@@ -35,10 +35,39 @@ public class EncapsulateTheData {
 		return this.itemsReceived;
 	}
 	
-	float degreesTurned; //must be locked between 0.0 and 360.0 inclusive.
-	String nomenclature = " "; //must not be set to a blank string. Blank Strings get set to a space
-	Object memberObj;  //must not be a String.  If it is a String, set it equal to a new Object();
+	private float degreesTurned; //must be locked between 0.0 and 360.0 inclusive.
+	public void setDegrees(float dt) {
+		if(dt <= 360 && dt >= 0) {
+			this.degreesTurned = dt;
+		}else {
+			this.degreesTurned = 9000;
+		}
+	}
+	public float getDegrees() {
+		return this.degreesTurned;
+	}
 	
+	private String nomenclature = " "; //must not be set to a blank string. Blank Strings get set to a space
+	public void setString(String nc) {
+		if(nc != "") {
+			this.nomenclature = nc;
+		}else {
+			this.nomenclature = " ";
+		}
+	}
+	public String getString() {
+		return this.nomenclature;
+	}
+	
+	private Object memberObj;  //must not be a String.  If it is a String, set it equal to a new Object();
+	public void setObject(Object mo) {
+		if(mo instanceof String) {
+		this.memberObj = new Object();	
+		}
+	}
+	public Object getObject() {
+		return this.memberObj;
+	}
 	public static void main(String[] args) {
 		
 	}

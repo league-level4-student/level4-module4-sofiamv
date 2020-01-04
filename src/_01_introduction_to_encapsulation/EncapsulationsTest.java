@@ -12,4 +12,20 @@ EncapsulateTheData a = new EncapsulateTheData();
 		a.setItem(-1);
 		assertEquals(0, a.getItem());
 	}
+	@Test
+	public void DegreesTest() {
+		a.setDegrees(361);
+		System.out.println(a.getDegrees());
+		assertEquals(9000, a.getDegrees());
+	}
+	@Test
+	public void StringTest() {
+		a.setString("");
+		assertEquals(" ", a.getString());
+	}
+	@Test
+	public void ObjectTest() {
+		a.setObject("object");
+		assertEquals(new Object(), a.getObject());
+	}
 }
