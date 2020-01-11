@@ -10,11 +10,17 @@ public class CirclePolymorph extends Polymorph{
 
 	@Override
 	public void update() {
-		setX(getX()+15);
-		setY(getY()+15);
+			moveX();
 		}
+		
 	public void draw(Graphics g) {
 		g.setColor(Color.green);
 		g.fillRect(getX(), getY(), getWidth(), getHeight());
+	}
+	public void moveX() {
+		setX(getX()+1);
+	}
+	public void moveY() {
+		setY(getY()+15);
 	}
 }
