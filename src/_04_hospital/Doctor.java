@@ -11,14 +11,19 @@ public class Doctor extends Hospital{
 		public boolean makesHouseCalls() {
 			return false;
 		}
-		public void assignPatient(Patient b) {
-			patients.add(b);
+		public void assignPatient(Patient b) throws Exception{
+			if(patients.size() >= 3) {
+				throw new Exception();
+			}else {
+				patients.add(b);
+			}
 		}
 		public ArrayList<Patient> getPatients(){
 			return patients;
 		}
-		public void doMedicine() {
-			a.a = true;
+		public boolean doMedicine(Patient v) {
+			v.iscaredfor = true;
+			return v.iscaredfor;
 		}
 
 }

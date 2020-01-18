@@ -12,4 +12,25 @@ public class Hospital {
 		return doctors;
 		
 	}
+	public void addPatient(Patient patient) {
+		patients.add(patient);
+		
+	}
+	public ArrayList<Patient> getPatients() {
+		return patients;
+	}
+	public void assignPatientsToDoctors() {
+		int b = 0;
+		for(int a = 0; a < doctors.size(); a++) {
+			for(;b < patients.size(); b++) {				
+				try {
+					doctors.get(a).assignPatient(patients.get(b));
+				} catch (Exception e) {
+					break;
+				}
+				
+			}
+		}
+		
+	}
 	}
